@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  isDone: false
+  isImportant: false
+  subjectIndex: 1
+
+two:
+  title: MyString
+  isDone: false
+  isImportant: false
+  subjectIndex: 1
