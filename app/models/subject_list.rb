@@ -1,0 +1,2 @@
+class SubjectList < ApplicationRecord
+end
