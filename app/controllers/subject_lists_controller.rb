@@ -15,7 +15,7 @@ class SubjectListsController < ApplicationController
          subject.destroy
       end
       if @subjects == []
-         render "success"
+         render json: {status: "success"}
       end
    end
 end
