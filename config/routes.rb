@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   get 'api/subject_lists/' => 'subject_lists#index'
   post 'api/subject_lists/' => 'subject_lists#create'
+  post 'api/subject_lists/perge' => 'subject_lists#perge'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

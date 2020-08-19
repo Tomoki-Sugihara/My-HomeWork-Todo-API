@@ -8,4 +8,14 @@ class SubjectListsController < ApplicationController
       @subject.save
       render json: @subject
    end
+
+   def perge
+      @subjects = SubjectList.all
+      @subjects.each do |subject|
+         subject.destroy
+      end
+      if @subjects == []
+         render "success"
+      end
+   end
 end
