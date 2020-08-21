@@ -45,7 +45,7 @@ class TodoListsController < ApplicationController
     @todos.each do |todo|
       todo.destroy
     end
-    render json: @todos
+    render json: {status: "success"} if @todos == []
 
   end
 end

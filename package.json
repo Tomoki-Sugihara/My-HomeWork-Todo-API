@@ -1,0 +1,11 @@
+{
+   "name": "project",
+   "version": "1.0.0",
+   "description": "You can post articles using this application.",
+   "main": "index.js",
+   "scripts": {
+     "build": "cd front && npm install && npm run build && cd ..",
+     "deploy": "cp -a front/build/. public/",
+     "heroku-postbuild": "npm run build && npm run deploy && echo 'Client built!'"
+   }
+ }
