@@ -40,11 +40,7 @@ group :development do
 end
 
 group :production do
-<<<<<<< HEAD
   gem 'pg', '>= 0.18', '< 2.0'
-=======
-  gem 'pg'
->>>>>>> heroku-deploy
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
