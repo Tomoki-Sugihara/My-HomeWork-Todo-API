@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000', 'https://my-homework-todo-api.herokuapp.com/api/'
+    origins 'http://localhost:3000', 'https://sugihara10969.github.io/My-HomeWork-Todo-App/'
 
     resource '*',
       headers: :any,
