@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000', 'https://sugihara10969.github.io/My-HomeWork-Todo-App/'
+    origins 'http://localhost:3000', 'https://sugihara10969.github.io/'
 
     resource '*',
       headers: :any,
