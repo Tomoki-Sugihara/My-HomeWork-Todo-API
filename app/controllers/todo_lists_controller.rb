@@ -16,14 +16,12 @@ class TodoListsController < ApplicationController
     render json: @todo
   end
 
-  def test
-    @todos = TodoList.all
-    @todo = @todos[params[:id].to_i]
-    render json: @todo
-  end
-
-  def update
-    
+  def delete_subject
+    @todos = TodoList.where(subjectIndex: params[:subjectIndex])
+    @todos.each do |todo|
+      todo.destroy
+    end
+    # render json: {status: "success"} if @todos == []
   end
 
   def update_is_imoportant
@@ -45,7 +43,6 @@ class TodoListsController < ApplicationController
     @todos.each do |todo|
       todo.destroy
     end
-    render json: {status: "success"} if @todos == []
-
+    # render json: {status: "success"} if @todos == []
   end
 end

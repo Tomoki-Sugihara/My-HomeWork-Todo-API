@@ -9,6 +9,12 @@ class SubjectListsController < ApplicationController
       render json: @subject
    end
 
+   def delete
+      @subject = SubjectList.find_by(key: params[:key])
+      @subject.destroy
+      render json: @subject
+    end
+
    def perge
       @subjects = SubjectList.all
       @subjects.each do |subject|
@@ -17,5 +23,6 @@ class SubjectListsController < ApplicationController
       if @subjects == []
          render json: {status: "success"}
       end
+      # redirect_to('todo_lists#perge')
    end
 end
