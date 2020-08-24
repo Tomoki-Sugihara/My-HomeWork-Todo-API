@@ -17,7 +17,7 @@ class TodoListsController < ApplicationController
   end
 
   def delete_subject
-    @todos = TodoList.where(subjectIndex: params[:subjectIndex])
+    @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
     @todos.each do |todo|
       todo.destroy
     end
