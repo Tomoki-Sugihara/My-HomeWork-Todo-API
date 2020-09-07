@@ -18,11 +18,16 @@ class TodoListsController < ApplicationController
 
   def delete_subject
     @todos = TodoList.where(subjectKey: params[:subjectKey])
-    # @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
     @todos.each do |todo|
       todo.destroy
     end
-    # render json: {status: "success"} if @todos == []
+  end
+
+  def perge_tasks
+    @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
+    @todos.each do |todo|
+      todo.destroy
+    end
   end
 
   def update_is_imoportant

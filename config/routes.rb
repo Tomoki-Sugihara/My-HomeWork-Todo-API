@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post   '/api/todo_lists/' => 'todo_lists#create'
   delete '/api/todo_lists/' => 'todo_lists#delete'
   post   '/api/todo_lists/delete_subject' => 'todo_lists#delete_subject'
+  post   '/api/todo_lists/perge_tasks' => 'todo_lists#perge_tasks'
   patch  '/api/todo_lists/is_important' => 'todo_lists#update_is_imoportant'
   patch  '/api/todo_lists/is_done' => 'todo_lists#update_is_done'
   post   '/api/todo_lists/perge' => 'todo_lists#perge'
