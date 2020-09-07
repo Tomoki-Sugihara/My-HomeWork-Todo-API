@@ -5,7 +5,7 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    @todo = TodoList.new(key: params[:key], title: params[:title], isDone: params[:isDone], isImportant: params[:isImportant], subjectIndex: params[:subjectIndex])
+    @todo = TodoList.new(key: params[:key], title: params[:title], isDone: params[:isDone], isImportant: params[:isImportant], subjectIndex: params[:subjectIndex], subjectKey: params[:subjectKey])
     @todo.save
     render json: @todo
   end
@@ -17,7 +17,8 @@ class TodoListsController < ApplicationController
   end
 
   def delete_subject
-    @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
+    @todos = TodoList.where(subjectKey: params[:subjectKey])
+    # @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
     @todos.each do |todo|
       todo.destroy
     end
