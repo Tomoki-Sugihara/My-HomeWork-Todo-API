@@ -5,7 +5,7 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    @todo = TodoList.new(key: params[:key], title: params[:title], isDone: params[:isDone], isImportant: params[:isImportant], subjectIndex: params[:subjectIndex], subjectKey: params[:subjectKey])
+    @todo = TodoList.new(key: params[:key], title: params[:title], isDone: params[:isDone], isImportant: params[:isImportant], subjectKey: params[:subjectKey], isTask: params[:isTask])
     @todo.save
     render json: @todo
   end
@@ -24,7 +24,8 @@ class TodoListsController < ApplicationController
   end
 
   def perge_tasks
-    @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
+    @todos = TodoList.where(isTask: true)
+    # @todos = TodoList.where(subjectIndex: params[:subjectIndex].to_i)
     @todos.each do |todo|
       todo.destroy
     end
