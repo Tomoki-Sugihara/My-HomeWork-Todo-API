@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_09_07_230151) do
 
-  create_table "subject_lists", force: :cascade do |t|
+  create_table "subject_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "todo_lists", force: :cascade do |t|
+  create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.boolean "isDone"
     t.boolean "isImportant"

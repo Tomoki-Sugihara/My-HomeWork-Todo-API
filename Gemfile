@@ -30,18 +30,20 @@ gem 'rack-cors'
 
 # gem 'foreman'
 
+gem 'mysql2'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :development do
 end
 
 group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
-  # gem 'mysql2'
+  # gem 'pg', '>= 0.18', '< 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
